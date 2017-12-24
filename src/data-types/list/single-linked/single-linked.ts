@@ -35,10 +35,13 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
 	}
 
 	public remove(item: ISingleLinkedListItem<T>): SingleLinkedList<T> {
-		if (item == null || this._head == null) return this
+		if (/*item == null ||*/ this._head == null) return this
 
 		if (this._head === item) {
 			this._head = item.next
+			if (item.next == null) {
+				this._tail = undefined
+			}
 			return this
 		}
 

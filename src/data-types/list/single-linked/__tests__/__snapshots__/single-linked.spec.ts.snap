@@ -103,6 +103,13 @@ SingleLinkedList {
 }
 `;
 
+exports[`single linked List should remove all items 1`] = `
+SingleLinkedList {
+  "_head": undefined,
+  "_tail": undefined,
+}
+`;
+
 exports[`single linked List should remove head 1`] = `
 SingleLinkedList {
   "_head": SingleLinkedListItem {

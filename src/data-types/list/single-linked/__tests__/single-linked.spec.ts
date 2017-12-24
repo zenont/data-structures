@@ -76,6 +76,20 @@ describe('single linked List', () => {
 		expect(linkedList).toMatchSnapshot()
 	})
 
+	it('should remove all items', () => {
+		const seed = 1
+		const linkedList = SingleLinkedList.of(seed)
+		linkedList.push(2)
+		linkedList.push(3)
+		let toRemove = linkedList.tail()
+		linkedList.remove(toRemove!)
+		toRemove = linkedList.tail()
+		linkedList.remove(toRemove!)
+		toRemove = linkedList.tail()
+		linkedList.remove(toRemove!)
+		expect(linkedList).toMatchSnapshot()
+	})
+
 	it('should pop item', () => {
 		const seed = 1
 		const linkedList = SingleLinkedList.of(seed)
@@ -87,6 +101,22 @@ describe('single linked List', () => {
 		expect(popped).toMatchSnapshot()
 		expect(linkedList).toMatchSnapshot()
 	})
+
+	/*it('should pop all items', () => {
+		const seed = 1
+		const linkedList = SingleLinkedList.of(seed)
+		linkedList.push(2)
+		linkedList.push(3)
+		linkedList.push(4)
+		linkedList.push(5)
+		let popped = linkedList.pop()
+		popped = linkedList.pop()
+		popped = linkedList.pop()
+		popped = linkedList.pop()
+		popped = linkedList.pop()
+		expect(popped).toMatchSnapshot()
+		expect(linkedList).toMatchSnapshot()
+	})*/
 /*
 	it('should find from last index at tail', () => {
 		const seed = 1
