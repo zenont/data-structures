@@ -1,14 +1,25 @@
 {
-  "name": "data-structures",
-  "version": "1.0.0",
-  "main": "lib/index.js",
-  "repository": "https://github.com/zenontrujillo/data-structures.git",
-  "author": "Zenon Trujillo",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/jest": "^21.1.9",
-    "jest": "^22.0.4",
-    "ts-jest": "^22.0.0",
-    "typescript": "^2.6.2"
-  }
+	"name": "data-structures",
+	"version": "1.0.0",
+	"main": "lib/index.js",
+	"repository": "https://github.com/zenontrujillo/data-structures.git",
+	"author": "Zenon Trujillo",
+	"license": "MIT",
+	"scripts": {
+		"cleanup": "rimraf ./lib",
+		"transpile": "tsc",
+		"build": "run-s cleanup transpile",
+		"prepublishOnly": "run-s build",
+		"test": "jest --config jest/config.json",
+		"lint": "tslint -p tsconfig.json --exclude '**/*.d.ts'"
+	},
+	"devDependencies": {
+		"@types/jest": "^21.1.9",
+		"jest": "^22.0.4",
+		"npm-run-all": "^4.1.2",
+		"rimraf": "^2.6.2",
+		"ts-jest": "^22.0.0",
+		"tslint": "^5.8.0",
+		"typescript": "^2.6.2"
+	}
 }
