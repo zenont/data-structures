@@ -9,6 +9,11 @@ describe('single linked List', () => {
 		expect(linkedList).toMatchSnapshot()
 	})
 
+	it('should create from array', () => {
+		const linkedList = SingleLinkedList.of(1, 2, 3, 4, 5)
+		expect(linkedList).toMatchSnapshot()
+	})
+
 	it('should create empty', () => {
 		const linkedList = SingleLinkedList.of()
 
@@ -18,8 +23,8 @@ describe('single linked List', () => {
 	it('should push one item', () => {
 		const seed = 1
 		const linkedList = SingleLinkedList.of(seed)
-		linkedList.push(2)
-
+		const pushed = linkedList.push(2)
+		expect(pushed).toMatchSnapshot()
 		expect(linkedList).toMatchSnapshot()
 	})
 
@@ -143,6 +148,23 @@ describe('single linked List', () => {
 		expect(popped).toMatchSnapshot()
 		expect(linkedList).toMatchSnapshot()
 	})
+
+	it('should over pop', () => {
+		const seed = 1
+		const linkedList = SingleLinkedList.of(seed)
+		linkedList.push(2)
+		linkedList.push(3)
+		linkedList.push(4)
+		linkedList.push(5)
+		let popped = linkedList.pop()
+		popped = linkedList.pop()
+		popped = linkedList.pop()
+		popped = linkedList.pop()
+		popped = linkedList.pop()
+		popped = linkedList.pop()
+		expect(popped).toMatchSnapshot()
+		expect(linkedList).toMatchSnapshot()
+	})
 	/*
 		it('should find from last index at tail', () => {
 			const seed = 1
@@ -232,36 +254,6 @@ describe('single linked List', () => {
 			expect(found).toMatchSnapshot()
 		})
 
-		it('should create list from array', () => {
-			const linkedList = SingleLinkedList.of(1, 2, 3, 4, 5)
-			expect(linkedList).toMatchSnapshot()
-		})
 
-		it('should fluent add', () => {
-			const linkedList = SingleLinkedList.of(1).add(2).add(3).add(4).add(5)
-			expect(linkedList).toMatchSnapshot()
-		})
-
-		it('should fluent add and remove', () => {
-			const linkedList = SingleLinkedList.of(1).add(2).add(3)
-			const toRemove = linkedList.tail()
-			linkedList.add(4).add(5).add(6)
-			linkedList.remove(toRemove)
-			expect(linkedList).toMatchSnapshot()
-		})
-
-		it('should pop', () => {
-			const linkedList = SingleLinkedList.of(1).add(2).add(3)
-			linkedList.pop()
-			expect(linkedList).toMatchSnapshot()
-		})
-
-		it('should over pop', () => {
-			const linkedList = SingleLinkedList.of(1).add(2).add(3)
-			linkedList.pop()
-			linkedList.pop()
-			linkedList.pop()
-			linkedList.pop()
-			expect(linkedList).toMatchSnapshot()
-		})*/
+*/
 })
