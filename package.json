@@ -11,7 +11,8 @@
 		"build": "run-s cleanup transpile",
 		"prepublishOnly": "run-s build",
 		"test": "jest --config jest/config.json",
-		"lint": "tslint -p tsconfig.json --exclude '**/*.d.ts'"
+		"lint": "tslint -p tsconfig.json --exclude '**/*.d.ts'",
+		"doc": "typedoc --mode modules --out docs/ src/ --exclude **/__tests__/*.spec.ts --ignoreCompilerErrors"
 	},
 	"devDependencies": {
 		"@types/jest": "^21.1.9",
@@ -20,6 +21,7 @@
 		"rimraf": "^2.6.2",
 		"ts-jest": "^22.0.0",
 		"tslint": "^5.8.0",
+		"typedoc": "^0.9.0",
 		"typescript": "^2.6.2"
 	}
 }

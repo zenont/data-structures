@@ -2,6 +2,10 @@ import { ISingleLinkedList, ISingleLinkedListItem, MaybeSingleLinkedListItem } f
 
 type SingleLinkedListItemType<T> = ISingleLinkedListItem<T> | null
 
+/**
+ * Represents a single-linked list item.
+ * THere will only be a next node reference.
+ */
 export class SingleLinkedListItem<T> implements ISingleLinkedListItem<T> {
 	public next: MaybeSingleLinkedListItem<T> = undefined
 	constructor(public value: T, next?: ISingleLinkedListItem<T>) {
@@ -9,7 +13,12 @@ export class SingleLinkedListItem<T> implements ISingleLinkedListItem<T> {
 	}
 }
 
+/**
+ * Single linked list.
+ * This data structure is useful if you only care about iterating a sequence in forwdward direction.
+ */
 export class SingleLinkedList<T> implements ISingleLinkedList<T> {
+	/** Creates a single linked item from a set of values. */
 	public static of<T>(...values: T[]): ISingleLinkedList<T> {
 		return new SingleLinkedList<T>(...values)
 	}
@@ -21,6 +30,7 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
 		values.forEach(item => this.push(item))
 	}
 
+	// Pushes a value node after the referenced node
 	public pushAfter(item: ISingleLinkedListItem<T>, value: T): ISingleLinkedListItem<T> {
 		const itemToPush = new SingleLinkedListItem(value)
 		if (item.next != null) {
