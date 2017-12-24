@@ -13,6 +13,22 @@ SingleLinkedList {
 }
 `;
 
+exports[`single linked List should create empty 1`] = `
+SingleLinkedList {
+  "_head": undefined,
+  "_tail": undefined,
+}
+`;
+
+exports[`single linked List should pop all items 1`] = `1`;
+
+exports[`single linked List should pop all items 2`] = `
+SingleLinkedList {
+  "_head": undefined,
+  "_tail": undefined,
+}
+`;
+
 exports[`single linked List should pop item 1`] = `5`;
 
 exports[`single linked List should pop item 2`] = `
@@ -33,6 +49,53 @@ SingleLinkedList {
   "_tail": SingleLinkedListItem {
     "next": undefined,
     "value": 4,
+  },
+}
+`;
+
+exports[`single linked List should push after item 1`] = `
+SingleLinkedList {
+  "_head": SingleLinkedListItem {
+    "next": SingleLinkedListItem {
+      "next": SingleLinkedListItem {
+        "next": SingleLinkedListItem {
+          "next": undefined,
+          "value": 4,
+        },
+        "value": 3,
+      },
+      "value": 2,
+    },
+    "value": 1,
+  },
+  "_tail": SingleLinkedListItem {
+    "next": undefined,
+    "value": 4,
+  },
+}
+`;
+
+exports[`single linked List should push after many items 1`] = `
+SingleLinkedList {
+  "_head": SingleLinkedListItem {
+    "next": SingleLinkedListItem {
+      "next": SingleLinkedListItem {
+        "next": SingleLinkedListItem {
+          "next": SingleLinkedListItem {
+            "next": undefined,
+            "value": 5,
+          },
+          "value": 4,
+        },
+        "value": 3,
+      },
+      "value": 2,
+    },
+    "value": 1,
+  },
+  "_tail": SingleLinkedListItem {
+    "next": undefined,
+    "value": 5,
   },
 }
 `;

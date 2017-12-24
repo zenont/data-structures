@@ -18,24 +18,23 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
 	private _tail: MaybeSingleLinkedListItem<T> = undefined
 
 	constructor(...values: T[]) {
-		values.forEach(item => this.add(item))
+		values.forEach(item => this.push(item))
 	}
 
-	public add(value: T): SingleLinkedList<T> {
-		const item = new SingleLinkedListItem(value)
-		if (this._head == null) {
-			this._head = item
-			this._tail = item
-		} else {
-			const itemToReplace = this._tail
-			itemToReplace!.next = item
-			this._tail = item
+	public pushAfter(item: ISingleLinkedListItem<T>, value: T): ISingleLinkedListItem<T> {
+		const itemToPush = new SingleLinkedListItem(value)
+		if (item.next != null) {
+			itemToPush.next = item.next
 		}
-		return this
+		item.next = itemToPush
+		if (item === this._tail) {
+			this._tail = itemToPush
+		}
+		return itemToPush
 	}
 
 	public remove(item: ISingleLinkedListItem<T>): SingleLinkedList<T> {
-		if (/*item == null ||*/ this._head == null) return this
+		if (item == null || this._head == null) return this
 
 		if (this._head === item) {
 			this._head = item.next
@@ -65,7 +64,7 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
 		return this
 	}
 
-	public push(value: T): SingleLinkedList<T> {
+	public push(value: T): ISingleLinkedListItem<T> {
 		const item = new SingleLinkedListItem(value)
 		if (this._head == null) {
 			this._head = item
@@ -75,7 +74,7 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
 			itemToReplace!.next = item
 			this._tail = item
 		}
-		return this
+		return item
 	}
 
 	public pop(): T | undefined {
