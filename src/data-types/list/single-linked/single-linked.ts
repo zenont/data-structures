@@ -1,14 +1,15 @@
-import { ISingleLinkedList, ISingleLinkedListItem, MaybeSingleLinkedListItem } from './interfaces'
+// import { ISingleLinkedList, ISingleLinkedListItem, MaybeSingleLinkedListItem } from './interfaces'
 
-type SingleLinkedListItemType<T> = ISingleLinkedListItem<T> | null
+export type MaybeSingleLinkedListItem<T> = SingleLinkedListItem<T> | undefined
+type SingleLinkedListItemType<T> = SingleLinkedListItem<T> | null
 
 /**
  * Represents a single-linked list item.
  * THere will only be a next node reference.
  */
-export class SingleLinkedListItem<T> implements ISingleLinkedListItem<T> {
+export class SingleLinkedListItem<T> implements SingleLinkedListItem<T> {
 	public next: MaybeSingleLinkedListItem<T> = undefined
-	constructor(public value: T, next?: ISingleLinkedListItem<T>) {
+	constructor(public value: T, next?: SingleLinkedListItem<T>) {
 		this.next = next || undefined
 	}
 }
@@ -16,10 +17,21 @@ export class SingleLinkedListItem<T> implements ISingleLinkedListItem<T> {
 /**
  * Single linked list.
  * This data structure is useful if you only care about iterating a sequence in forwdward direction.
+ * @export
+ * @class SingleLinkedList
+ * @implements {ISingleLinkedList<T>}
+ * @template T
  */
-export class SingleLinkedList<T> implements ISingleLinkedList<T> {
-	/** Creates a single linked item from a set of values. */
-	public static of<T>(...values: T[]): ISingleLinkedList<T> {
+export class SingleLinkedList<T> implements SingleLinkedList<T> {
+	/**
+	 * Creates a single linked item from a set of values.
+	 * @static
+	 * @template T
+	 * @param {...T[]} values
+	 * @returns {ISingleLinkedList<T>}
+	 * @memberof SingleLinkedList
+	 */
+	public static of<T>(...values: T[]): SingleLinkedList<T> {
 		return new SingleLinkedList<T>(...values)
 	}
 
@@ -30,8 +42,14 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
 		values.forEach(item => this.push(item))
 	}
 
-	// Pushes a value node after the referenced node
-	public pushAfter(item: ISingleLinkedListItem<T>, value: T): ISingleLinkedListItem<T> {
+	/**
+	 * Pushes a value node after the referenced node.
+	 * @param {ISingleLinkedListItem<T>} item
+	 * @param {T} value
+	 * @returns {ISingleLinkedListItem<T>}
+	 * @memberof SingleLinkedList
+	 */
+	public pushAfter(item: SingleLinkedListItem<T>, value: T): SingleLinkedListItem<T> {
 		const itemToPush = new SingleLinkedListItem(value)
 		if (item.next != null) {
 			itemToPush.next = item.next
@@ -43,7 +61,14 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
 		return itemToPush
 	}
 
-	public remove(item: ISingleLinkedListItem<T>): SingleLinkedList<T> {
+	/**
+	 * Removes a node from the list.
+	 * Both, head & tail references will be updated if affected.
+	 * @param {SingleLinkedListItem<T>} item
+	 * @returns {SingleLinkedList<T>}
+	 * @memberof SingleLinkedList
+	 */
+	public remove(item: SingleLinkedListItem<T>): SingleLinkedList<T> {
 		if (item == null || this._head == null) return this
 
 		if (this._head === item) {
@@ -74,7 +99,13 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
 		return this
 	}
 
-	public push(value: T): ISingleLinkedListItem<T> {
+	/**
+	 * Pushes a value to the list as a node.
+	 * @param {T} value
+	 * @returns {SingleLinkedListItem<T>}
+	 * @memberof SingleLinkedList
+	 */
+	public push(value: T): SingleLinkedListItem<T> {
 		const item = new SingleLinkedListItem(value)
 		if (this._head == null) {
 			this._head = item
@@ -87,6 +118,12 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
 		return item
 	}
 
+	/**
+	 * It pops a value out of the list.
+	 * The node with the value will be removed.
+	 * @returns {(T | undefined)}
+	 * @memberof SingleLinkedList
+	 */
 	public pop(): T | undefined {
 		const tail = this.tail()
 		if (tail == null) return undefined
@@ -95,23 +132,43 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
 		return tail.value
 	}
 
+	/**
+	 * Gets the head node.
+	 * @returns {MaybeSingleLinkedListItem<T>}
+	 * @memberof SingleLinkedList
+	 */
 	public head(): MaybeSingleLinkedListItem<T> {
 		return this._head
 	}
 
+	/**
+	 * Gets the tail node.
+	 * @returns {MaybeSingleLinkedListItem<T>}
+	 * @memberof SingleLinkedList
+	 */
 	public tail(): MaybeSingleLinkedListItem<T> {
 		return this._tail
 	}
 
+	/**
+	 * Returns true if the tail node exists, false otherwise.
+	 * @returns {boolean}
+	 * @memberof SingleLinkedList
+	 */
 	public hasTail(): boolean {
 		return this._tail != null
 	}
 
+	/**
+	 * Returns true if the head node exists, false otherwise.
+	 * @returns {boolean}
+	 * @memberof SingleLinkedList
+	 */
 	public hasHead(): boolean {
 		return this._head != null
 	}
 
-	public findFromLast(index: number): MaybeSingleLinkedListItem<T> {
+	private findFromLast(index: number): MaybeSingleLinkedListItem<T> {
 		if (this._head == null) return undefined
 		if (index === 0) return this._tail
 
