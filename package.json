@@ -1,0 +1,14 @@
+{
+  "name": "data-structures",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "repository": "https://github.com/zenontrujillo/data-structures.git",
+  "author": "Zenon Trujillo",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^21.1.9",
+    "jest": "^22.0.4",
+    "ts-jest": "^22.0.0",
+    "typescript": "^2.6.2"
+  }
+}
