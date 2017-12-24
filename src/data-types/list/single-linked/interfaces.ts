@@ -6,7 +6,6 @@ export interface ISingleLinkedListItem<T> {
 }
 
 export interface ISingleLinkedList<T> {
-	// add(value: T): ISingleLinkedList<T>
 	pushAfter(item: ISingleLinkedListItem<T>, value: T): ISingleLinkedListItem<T>
 	remove(item: ISingleLinkedListItem<T>): ISingleLinkedList<T>
 	push(value: T): ISingleLinkedListItem<T>
@@ -15,5 +14,4 @@ export interface ISingleLinkedList<T> {
 	tail(): MaybeSingleLinkedListItem<T>
 	hasTail(): boolean
 	hasHead(): boolean
-	findFromLast(index: number): MaybeSingleLinkedListItem<T>
 }
