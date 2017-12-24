@@ -8,6 +8,7 @@ export interface ISingleLinkedListItem<T> {
 export interface ISingleLinkedList<T> {
 	add(value: T): ISingleLinkedList<T>
 	remove(item: ISingleLinkedListItem<T>): ISingleLinkedList<T>
+	push(value: T): ISingleLinkedList<T>
 	pop(): T | undefined
 	head(): MaybeSingleLinkedListItem<T>
 	tail(): MaybeSingleLinkedListItem<T>

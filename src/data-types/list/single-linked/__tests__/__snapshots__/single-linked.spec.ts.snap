@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`single linked List should create 1`] = `
+SingleLinkedList {
+  "_head": SingleLinkedListItem {
+    "next": undefined,
+    "value": 1,
+  },
+  "_tail": SingleLinkedListItem {
+    "next": undefined,
+    "value": 1,
+  },
+}
+`;
+
+exports[`single linked List should pop item 1`] = `5`;
+
+exports[`single linked List should pop item 2`] = `
+SingleLinkedList {
+  "_head": SingleLinkedListItem {
+    "next": SingleLinkedListItem {
+      "next": SingleLinkedListItem {
+        "next": SingleLinkedListItem {
+          "next": undefined,
+          "value": 4,
+        },
+        "value": 3,
+      },
+      "value": 2,
+    },
+    "value": 1,
+  },
+  "_tail": SingleLinkedListItem {
+    "next": undefined,
+    "value": 4,
+  },
+}
+`;
+
+exports[`single linked List should push many items 1`] = `
+SingleLinkedList {
+  "_head": SingleLinkedListItem {
+    "next": SingleLinkedListItem {
+      "next": SingleLinkedListItem {
+        "next": SingleLinkedListItem {
+          "next": SingleLinkedListItem {
+            "next": undefined,
+            "value": 5,
+          },
+          "value": 4,
+        },
+        "value": 3,
+      },
+      "value": 2,
+    },
+    "value": 1,
+  },
+  "_tail": SingleLinkedListItem {
+    "next": undefined,
+    "value": 5,
+  },
+}
+`;
+
+exports[`single linked List should push many items with seed 1`] = `
+SingleLinkedList {
+  "_head": SingleLinkedListItem {
+    "next": SingleLinkedListItem {
+      "next": SingleLinkedListItem {
+        "next": SingleLinkedListItem {
+          "next": SingleLinkedListItem {
+            "next": undefined,
+            "value": 5,
+          },
+          "value": 4,
+        },
+        "value": 3,
+      },
+      "value": 2,
+    },
+    "value": 1,
+  },
+  "_tail": SingleLinkedListItem {
+    "next": undefined,
+    "value": 5,
+  },
+}
+`;
+
+exports[`single linked List should push one item 1`] = `
+SingleLinkedList {
+  "_head": SingleLinkedListItem {
+    "next": SingleLinkedListItem {
+      "next": undefined,
+      "value": 2,
+    },
+    "value": 1,
+  },
+  "_tail": SingleLinkedListItem {
+    "next": undefined,
+    "value": 2,
+  },
+}
+`;
+
+exports[`single linked List should remove head 1`] = `
+SingleLinkedList {
+  "_head": SingleLinkedListItem {
+    "next": SingleLinkedListItem {
+      "next": SingleLinkedListItem {
+        "next": SingleLinkedListItem {
+          "next": undefined,
+          "value": 5,
+        },
+        "value": 4,
+      },
+      "value": 3,
+    },
+    "value": 2,
+  },
+  "_tail": SingleLinkedListItem {
+    "next": undefined,
+    "value": 5,
+  },
+}
+`;
+
+exports[`single linked List should remove item in the middle 1`] = `
+SingleLinkedList {
+  "_head": SingleLinkedListItem {
+    "next": SingleLinkedListItem {
+      "next": SingleLinkedListItem {
+        "next": SingleLinkedListItem {
+          "next": undefined,
+          "value": 5,
+        },
+        "value": 4,
+      },
+      "value": 2,
+    },
+    "value": 1,
+  },
+  "_tail": SingleLinkedListItem {
+    "next": undefined,
+    "value": 5,
+  },
+}
+`;
+
+exports[`single linked List should remove tail 1`] = `
+SingleLinkedList {
+  "_head": SingleLinkedListItem {
+    "next": SingleLinkedListItem {
+      "next": SingleLinkedListItem {
+        "next": SingleLinkedListItem {
+          "next": undefined,
+          "value": 4,
+        },
+        "value": 3,
+      },
+      "value": 2,
+    },
+    "value": 1,
+  },
+  "_tail": SingleLinkedListItem {
+    "next": undefined,
+    "value": 4,
+  },
+}
+`;

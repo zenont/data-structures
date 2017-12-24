@@ -62,6 +62,19 @@ export class SingleLinkedList<T> implements ISingleLinkedList<T> {
 		return this
 	}
 
+	public push(value: T): SingleLinkedList<T> {
+		const item = new SingleLinkedListItem(value)
+		if (this._head == null) {
+			this._head = item
+			this._tail = item
+		} else {
+			const itemToReplace = this._tail
+			itemToReplace!.next = item
+			this._tail = item
+		}
+		return this
+	}
+
 	public pop(): T | undefined {
 		const tail = this.tail()
 		if (tail == null) return undefined
