@@ -165,4 +165,19 @@ describe('single linked List', () => {
 		expect(popped).toMatchSnapshot()
 		expect(linkedList).toMatchSnapshot()
 	})
+
+	it('should return true for head', () => {
+		const seed = 1
+		const linkedList = SingleLinkedList.of(seed)
+
+		expect(linkedList.hasHead()).toEqual(true)
+	})
+
+	it('should return false for head', () => {
+		const seed = 1
+		const linkedList = SingleLinkedList.of(seed)
+		linkedList.pop()
+
+		expect(linkedList.hasHead()).toEqual(false)
+	})
 })
