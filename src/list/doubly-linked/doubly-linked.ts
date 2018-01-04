@@ -1,15 +1,45 @@
 export type MaybeDoublyLinkedListItem<T> = DoublyLinkedListItem<T> | undefined
 
+/**
+ * DoublyLinkedListItem.
+ * Contains a prev and next reference.
+ * @export
+ * @class DoublyLinkedListItem
+ * @template T
+ */
 export class DoublyLinkedListItem<T> {
 	public prev: MaybeDoublyLinkedListItem<T> = undefined
 	public next: MaybeDoublyLinkedListItem<T> = undefined
+	/**
+	 * Creates an instance of DoublyLinkedListItem.
+	 * @param {T} value
+	 * @param {MaybeDoublyLinkedListItem<T>} [prev]
+	 * @param {MaybeDoublyLinkedListItem<T>} [next]
+	 * @memberof DoublyLinkedListItem
+	 */
 	constructor(public value: T, prev?: MaybeDoublyLinkedListItem<T>, next?: MaybeDoublyLinkedListItem<T>) {
 		this.prev = prev
 		this.next = next
 	}
 }
 
+/**
+ * Doubly Linked list class.
+ * Creates an instance of @class DoublyLinkedList
+ * @export
+ * @class DoublyLinkedList
+ * @template T
+ */
 export class DoublyLinkedList<T> {
+	/**
+	 * Creates an instance of @class DoublyLinkedList from an array.
+	 *
+	 * @static
+	 * @template T
+	 * @param {...T[]} values
+	 * @returns {DoublyLinkedList<T>}
+	 * @memberof DoublyLinkedList
+	 */
 	public static of<T>(...values: T[]): DoublyLinkedList<T> {
 		return new DoublyLinkedList<T>(...values)
 	}
@@ -17,10 +47,22 @@ export class DoublyLinkedList<T> {
 	private _head: MaybeDoublyLinkedListItem<T> = undefined
 	private _tail: MaybeDoublyLinkedListItem<T> = undefined
 
+	/**
+	 * Creates an instance of DoublyLinkedList.
+	 * @param {...T[]} values
+	 * @memberof DoublyLinkedList
+	 */
 	constructor(...values: T[]) {
 		values.forEach(value => this.push(value))
 	}
 
+	/**
+	 * Push a value into the list.
+	 * The value will create a new node at the tail of the list.
+	 * @param {T} value
+	 * @returns {DoublyLinkedListItem<T>}
+	 * @memberof DoublyLinkedList
+	 */
 	public push(value: T): DoublyLinkedListItem<T> {
 		const item = new DoublyLinkedListItem(value)
 		if (this._head == null) {
@@ -37,8 +79,8 @@ export class DoublyLinkedList<T> {
 	}
 
 	/**
-	 * It pops a value out of the list.
-	 * The node with the value will be removed.
+	 * Pops a value from the list.
+	 * The value will be popped from the tail of the list.
 	 * @returns {(T | undefined)}
 	 * @memberof DoublyLinkedList
 	 */
@@ -50,6 +92,13 @@ export class DoublyLinkedList<T> {
 		return tail.value
 	}
 
+	/**
+	 * Removes an item from the list
+	 *
+	 * @param {DoublyLinkedListItem<T>} item
+	 * @returns {DoublyLinkedList<T>}
+	 * @memberof DoublyLinkedList
+	 */
 	public remove(item: DoublyLinkedListItem<T>): DoublyLinkedList<T> {
 		if (item == null || this._head == null) return this
 
@@ -77,18 +126,42 @@ export class DoublyLinkedList<T> {
 		return this
 	}
 
+	/**
+	 * Gets the head of the list.
+	 * Expect undefined if the list is empty.
+	 * @returns {MaybeDoublyLinkedListItem<T>}
+	 * @memberof DoublyLinkedList
+	 */
 	public head(): MaybeDoublyLinkedListItem<T> {
 		return this._head
 	}
 
+	/**
+	 * Gets the tail of the list.
+	 * Expect undefined if the list is empty.
+	 * @returns {MaybeDoublyLinkedListItem<T>}
+	 * @memberof DoublyLinkedList
+	 */
 	public tail(): MaybeDoublyLinkedListItem<T> {
 		return this._tail
 	}
 
+	/**
+	 * Returns true if there is a tail node, false otherwise.
+	 *
+	 * @returns {boolean}
+	 * @memberof DoublyLinkedList
+	 */
 	public hasTail(): boolean {
 		return this._tail != null
 	}
 
+	/**
+	 * Returns true if there is a head node, false otherwise.
+	 *
+	 * @returns {boolean}
+	 * @memberof DoublyLinkedList
+	 */
 	public hasHead(): boolean {
 		return this._head != null
 	}
