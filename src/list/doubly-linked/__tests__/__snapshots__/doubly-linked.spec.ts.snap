@@ -128,6 +128,68 @@ DoublyLinkedList {
 }
 `;
 
+exports[`doubly linked List should push after 1`] = `
+DoublyLinkedList {
+  "_head": DoublyLinkedListItem {
+    "next": DoublyLinkedListItem {
+      "next": undefined,
+      "prev": [Circular],
+      "value": 2,
+    },
+    "prev": undefined,
+    "value": 1,
+  },
+  "_tail": DoublyLinkedListItem {
+    "next": undefined,
+    "prev": DoublyLinkedListItem {
+      "next": [Circular],
+      "prev": undefined,
+      "value": 1,
+    },
+    "value": 2,
+  },
+}
+`;
+
+exports[`doubly linked List should push after node in the middle 1`] = `
+DoublyLinkedList {
+  "_head": DoublyLinkedListItem {
+    "next": DoublyLinkedListItem {
+      "next": DoublyLinkedListItem {
+        "next": DoublyLinkedListItem {
+          "next": undefined,
+          "prev": [Circular],
+          "value": 4,
+        },
+        "prev": [Circular],
+        "value": 3,
+      },
+      "prev": [Circular],
+      "value": 2,
+    },
+    "prev": undefined,
+    "value": 1,
+  },
+  "_tail": DoublyLinkedListItem {
+    "next": undefined,
+    "prev": DoublyLinkedListItem {
+      "next": [Circular],
+      "prev": DoublyLinkedListItem {
+        "next": [Circular],
+        "prev": DoublyLinkedListItem {
+          "next": [Circular],
+          "prev": undefined,
+          "value": 1,
+        },
+        "value": 2,
+      },
+      "value": 3,
+    },
+    "value": 4,
+  },
+}
+`;
+
 exports[`doubly linked List should push many 1`] = `
 DoublyLinkedList {
   "_head": DoublyLinkedListItem {

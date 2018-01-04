@@ -79,6 +79,29 @@ export class DoublyLinkedList<T> {
 	}
 
 	/**
+	 * Push a value after an item in the list.
+	 * The value will create a new node after the passed item.
+	 * @param {DoublyLinkedListItem<T>} item
+	 * @param {T} value
+	 * @returns {DoublyLinkedListItem<T>}
+	 * @memberof DoublyLinkedList
+	 */
+	public pushAfter(item: DoublyLinkedListItem<T>, value: T): DoublyLinkedListItem<T> {
+		if (item == null) throw new Error('The item you are trying to push after is null or undefined')
+
+		const itemToPush = new DoublyLinkedListItem(value, item)
+		if (item.next != null) {
+			itemToPush.next = item.next
+			item.next.prev = itemToPush
+		}
+		item.next = itemToPush
+		if (item === this._tail) {
+			this._tail = itemToPush
+		}
+		return itemToPush
+	}
+
+	/**
 	 * Pops a value from the list.
 	 * The value will be popped from the tail of the list.
 	 * @returns {(T | undefined)}

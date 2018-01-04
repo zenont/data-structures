@@ -147,4 +147,18 @@ describe('doubly linked List', () => {
 		linkedList.pop()
 		expect(linkedList.hasHead()).toEqual(false)
 	})
+
+	it('should push after', () => {
+		const linkedList = DoublyLinkedList.of(1)
+		linkedList.pushAfter(linkedList.tail(), 2)
+		expect(linkedList).toMatchSnapshot()
+	})
+
+	it('should push after node in the middle', () => {
+		const linkedList = DoublyLinkedList.of(1, 2)
+		const after = linkedList.tail()
+		linkedList.push(4)
+		linkedList.pushAfter(after, 3)
+		expect(linkedList).toMatchSnapshot()
+	})
 })
