@@ -1,5 +1,3 @@
-// import { ISingleLinkedList, ISingleLinkedListItem, MaybeSingleLinkedListItem } from './interfaces'
-
 export type MaybeSingleLinkedListItem<T> = SingleLinkedListItem<T> | undefined
 type SingleLinkedListItemType<T> = SingleLinkedListItem<T> | null
 
