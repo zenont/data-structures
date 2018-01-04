@@ -1,6 +1,6 @@
 {
 	"name": "data-structures",
-	"version": "1.1.0-0",
+	"version": "1.0.0-0",
 	"main": "lib/index.js",
 	"repository": "https://github.com/zenontrujillo/data-structures.git",
 	"author": "Zenon Trujillo",

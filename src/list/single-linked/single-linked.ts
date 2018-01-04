@@ -41,6 +41,39 @@ export class SingleLinkedList<T> implements SingleLinkedList<T> {
 	}
 
 	/**
+	 * Pushes a value to the list as a node.
+	 * @param {T} value
+	 * @returns {SingleLinkedListItem<T>}
+	 * @memberof SingleLinkedList
+	 */
+	public push(value: T): SingleLinkedListItem<T> {
+		const item = new SingleLinkedListItem(value)
+		if (this._head == null) {
+			this._head = item
+			this._tail = item
+		} else {
+			const itemToReplace = this._tail
+			itemToReplace!.next = item
+			this._tail = item
+		}
+		return item
+	}
+
+	/**
+	 * It pops a value out of the list.
+	 * The node with the value will be removed.
+	 * @returns {(T | undefined)}
+	 * @memberof SingleLinkedList
+	 */
+	public pop(): T | undefined {
+		const tail = this.tail()
+		if (tail == null) return undefined
+
+		this.remove(tail)
+		return tail.value
+	}
+
+	/**
 	 * Pushes a value node after the referenced node.
 	 * @param {ISingleLinkedListItem<T>} item
 	 * @param {T} value
@@ -95,39 +128,6 @@ export class SingleLinkedList<T> implements SingleLinkedList<T> {
 			}
 		}
 		return this
-	}
-
-	/**
-	 * Pushes a value to the list as a node.
-	 * @param {T} value
-	 * @returns {SingleLinkedListItem<T>}
-	 * @memberof SingleLinkedList
-	 */
-	public push(value: T): SingleLinkedListItem<T> {
-		const item = new SingleLinkedListItem(value)
-		if (this._head == null) {
-			this._head = item
-			this._tail = item
-		} else {
-			const itemToReplace = this._tail
-			itemToReplace!.next = item
-			this._tail = item
-		}
-		return item
-	}
-
-	/**
-	 * It pops a value out of the list.
-	 * The node with the value will be removed.
-	 * @returns {(T | undefined)}
-	 * @memberof SingleLinkedList
-	 */
-	public pop(): T | undefined {
-		const tail = this.tail()
-		if (tail == null) return undefined
-
-		this.remove(tail)
-		return tail.value
 	}
 
 	/**

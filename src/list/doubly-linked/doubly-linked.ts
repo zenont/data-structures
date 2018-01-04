@@ -21,7 +21,7 @@ export class DoublyLinkedList<T> {
 		values.forEach(value => this.push(value))
 	}
 
-	public push(value: T): DoublyLinkedList<T> {
+	public push(value: T): DoublyLinkedListItem<T> {
 		const item = new DoublyLinkedListItem(value)
 		if (this._head == null) {
 			this._head = item
@@ -33,7 +33,21 @@ export class DoublyLinkedList<T> {
 			this._tail.next = item
 			this._tail = item
 		}
-		return this
+		return item
+	}
+
+	/**
+	 * It pops a value out of the list.
+	 * The node with the value will be removed.
+	 * @returns {(T | undefined)}
+	 * @memberof DoublyLinkedList
+	 */
+	public pop(): T | undefined {
+		const tail = this.tail()
+		if (tail == null) return undefined
+
+		this.remove(tail)
+		return tail.value
 	}
 
 	public remove(item: DoublyLinkedListItem<T>): DoublyLinkedList<T> {

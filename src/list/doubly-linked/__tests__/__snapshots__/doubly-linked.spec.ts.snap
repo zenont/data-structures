@@ -1,0 +1,323 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`doubly linked List should create 1`] = `
+DoublyLinkedList {
+  "_head": DoublyLinkedListItem {
+    "next": undefined,
+    "prev": undefined,
+    "value": 1,
+  },
+  "_tail": DoublyLinkedListItem {
+    "next": undefined,
+    "prev": undefined,
+    "value": 1,
+  },
+}
+`;
+
+exports[`doubly linked List should create empty 1`] = `
+DoublyLinkedList {
+  "_head": undefined,
+  "_tail": undefined,
+}
+`;
+
+exports[`doubly linked List should create from array 1`] = `
+DoublyLinkedList {
+  "_head": DoublyLinkedListItem {
+    "next": DoublyLinkedListItem {
+      "next": DoublyLinkedListItem {
+        "next": DoublyLinkedListItem {
+          "next": DoublyLinkedListItem {
+            "next": undefined,
+            "prev": [Circular],
+            "value": 5,
+          },
+          "prev": [Circular],
+          "value": 4,
+        },
+        "prev": [Circular],
+        "value": 3,
+      },
+      "prev": [Circular],
+      "value": 2,
+    },
+    "prev": undefined,
+    "value": 1,
+  },
+  "_tail": DoublyLinkedListItem {
+    "next": undefined,
+    "prev": DoublyLinkedListItem {
+      "next": [Circular],
+      "prev": DoublyLinkedListItem {
+        "next": [Circular],
+        "prev": DoublyLinkedListItem {
+          "next": [Circular],
+          "prev": DoublyLinkedListItem {
+            "next": [Circular],
+            "prev": undefined,
+            "value": 1,
+          },
+          "value": 2,
+        },
+        "value": 3,
+      },
+      "value": 4,
+    },
+    "value": 5,
+  },
+}
+`;
+
+exports[`doubly linked List should over pop 1`] = `undefined`;
+
+exports[`doubly linked List should over pop 2`] = `
+DoublyLinkedList {
+  "_head": undefined,
+  "_tail": undefined,
+}
+`;
+
+exports[`doubly linked List should pop all items 1`] = `1`;
+
+exports[`doubly linked List should pop all items 2`] = `
+DoublyLinkedList {
+  "_head": undefined,
+  "_tail": undefined,
+}
+`;
+
+exports[`doubly linked List should pop item 1`] = `5`;
+
+exports[`doubly linked List should pop item 2`] = `
+DoublyLinkedList {
+  "_head": DoublyLinkedListItem {
+    "next": DoublyLinkedListItem {
+      "next": DoublyLinkedListItem {
+        "next": DoublyLinkedListItem {
+          "next": undefined,
+          "prev": [Circular],
+          "value": 4,
+        },
+        "prev": [Circular],
+        "value": 3,
+      },
+      "prev": [Circular],
+      "value": 2,
+    },
+    "prev": undefined,
+    "value": 1,
+  },
+  "_tail": DoublyLinkedListItem {
+    "next": undefined,
+    "prev": DoublyLinkedListItem {
+      "next": [Circular],
+      "prev": DoublyLinkedListItem {
+        "next": [Circular],
+        "prev": DoublyLinkedListItem {
+          "next": [Circular],
+          "prev": undefined,
+          "value": 1,
+        },
+        "value": 2,
+      },
+      "value": 3,
+    },
+    "value": 4,
+  },
+}
+`;
+
+exports[`doubly linked List should push many 1`] = `
+DoublyLinkedList {
+  "_head": DoublyLinkedListItem {
+    "next": DoublyLinkedListItem {
+      "next": DoublyLinkedListItem {
+        "next": DoublyLinkedListItem {
+          "next": DoublyLinkedListItem {
+            "next": undefined,
+            "prev": [Circular],
+            "value": 5,
+          },
+          "prev": [Circular],
+          "value": 4,
+        },
+        "prev": [Circular],
+        "value": 3,
+      },
+      "prev": [Circular],
+      "value": 2,
+    },
+    "prev": undefined,
+    "value": 1,
+  },
+  "_tail": DoublyLinkedListItem {
+    "next": undefined,
+    "prev": DoublyLinkedListItem {
+      "next": [Circular],
+      "prev": DoublyLinkedListItem {
+        "next": [Circular],
+        "prev": DoublyLinkedListItem {
+          "next": [Circular],
+          "prev": DoublyLinkedListItem {
+            "next": [Circular],
+            "prev": undefined,
+            "value": 1,
+          },
+          "value": 2,
+        },
+        "value": 3,
+      },
+      "value": 4,
+    },
+    "value": 5,
+  },
+}
+`;
+
+exports[`doubly linked List should push one 1`] = `
+DoublyLinkedList {
+  "_head": DoublyLinkedListItem {
+    "next": DoublyLinkedListItem {
+      "next": undefined,
+      "prev": [Circular],
+      "value": 2,
+    },
+    "prev": undefined,
+    "value": 1,
+  },
+  "_tail": DoublyLinkedListItem {
+    "next": undefined,
+    "prev": DoublyLinkedListItem {
+      "next": [Circular],
+      "prev": undefined,
+      "value": 1,
+    },
+    "value": 2,
+  },
+}
+`;
+
+exports[`doubly linked List should remove all items 1`] = `
+DoublyLinkedList {
+  "_head": undefined,
+  "_tail": undefined,
+}
+`;
+
+exports[`doubly linked List should remove head 1`] = `
+DoublyLinkedList {
+  "_head": DoublyLinkedListItem {
+    "next": DoublyLinkedListItem {
+      "next": DoublyLinkedListItem {
+        "next": DoublyLinkedListItem {
+          "next": undefined,
+          "prev": [Circular],
+          "value": 5,
+        },
+        "prev": [Circular],
+        "value": 4,
+      },
+      "prev": [Circular],
+      "value": 3,
+    },
+    "prev": undefined,
+    "value": 2,
+  },
+  "_tail": DoublyLinkedListItem {
+    "next": undefined,
+    "prev": DoublyLinkedListItem {
+      "next": [Circular],
+      "prev": DoublyLinkedListItem {
+        "next": [Circular],
+        "prev": DoublyLinkedListItem {
+          "next": [Circular],
+          "prev": undefined,
+          "value": 2,
+        },
+        "value": 3,
+      },
+      "value": 4,
+    },
+    "value": 5,
+  },
+}
+`;
+
+exports[`doubly linked List should remove middle 1`] = `
+DoublyLinkedList {
+  "_head": DoublyLinkedListItem {
+    "next": DoublyLinkedListItem {
+      "next": DoublyLinkedListItem {
+        "next": DoublyLinkedListItem {
+          "next": undefined,
+          "prev": [Circular],
+          "value": 5,
+        },
+        "prev": [Circular],
+        "value": 4,
+      },
+      "prev": [Circular],
+      "value": 2,
+    },
+    "prev": undefined,
+    "value": 1,
+  },
+  "_tail": DoublyLinkedListItem {
+    "next": undefined,
+    "prev": DoublyLinkedListItem {
+      "next": [Circular],
+      "prev": DoublyLinkedListItem {
+        "next": [Circular],
+        "prev": DoublyLinkedListItem {
+          "next": [Circular],
+          "prev": undefined,
+          "value": 1,
+        },
+        "value": 2,
+      },
+      "value": 4,
+    },
+    "value": 5,
+  },
+}
+`;
+
+exports[`doubly linked List should remove tail 1`] = `
+DoublyLinkedList {
+  "_head": DoublyLinkedListItem {
+    "next": DoublyLinkedListItem {
+      "next": DoublyLinkedListItem {
+        "next": DoublyLinkedListItem {
+          "next": undefined,
+          "prev": [Circular],
+          "value": 4,
+        },
+        "prev": [Circular],
+        "value": 3,
+      },
+      "prev": [Circular],
+      "value": 2,
+    },
+    "prev": undefined,
+    "value": 1,
+  },
+  "_tail": DoublyLinkedListItem {
+    "next": undefined,
+    "prev": DoublyLinkedListItem {
+      "next": [Circular],
+      "prev": DoublyLinkedListItem {
+        "next": [Circular],
+        "prev": DoublyLinkedListItem {
+          "next": [Circular],
+          "prev": undefined,
+          "value": 1,
+        },
+        "value": 2,
+      },
+      "value": 3,
+    },
+    "value": 4,
+  },
+}
+`;
