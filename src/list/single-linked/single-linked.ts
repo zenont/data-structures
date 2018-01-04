@@ -3,7 +3,7 @@ type SingleLinkedListItemType<T> = SingleLinkedListItem<T> | null
 
 /**
  * Represents a single-linked list item.
- * THere will only be a next node reference.
+ * There will only be a next node reference.
  */
 export class SingleLinkedListItem<T> implements SingleLinkedListItem<T> {
 	public next: MaybeSingleLinkedListItem<T> = undefined
@@ -14,7 +14,7 @@ export class SingleLinkedListItem<T> implements SingleLinkedListItem<T> {
 
 /**
  * Single linked list.
- * This data structure is useful if you only care about iterating a sequence in forwdward direction.
+ * This data structure is useful if you only care about iterating a sequence in forward direction.
  * @export
  * @class SingleLinkedList
  * @implements {ISingleLinkedList<T>}
