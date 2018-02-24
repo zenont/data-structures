@@ -10,9 +10,9 @@
 		"transpile": "tsc",
 		"build": "run-s cleanup transpile",
 		"prepublishOnly": "run-s build",
-		"test": "jest --config jest/config.json",
-		"test:coverage": "jest --config jest/config.json --coverage",
-		"test:report": "jest --config jest/config.json --coverage && ./node_modules/.bin/opener coverage/lcov-report/index.html",
+		"test": "jest --config jest.json",
+		"test:coverage": "jest --config jest.json --coverage",
+		"test:report": "jest --config jest.json --coverage && ./node_modules/.bin/opener coverage/lcov-report/index.html",
 		"lint": "tslint -p tsconfig.json --exclude '**/*.d.ts'",
 		"doc": "typedoc --mode modules --out docs/ src/ --exclude **/__tests__/*.spec.ts --ignoreCompilerErrors"
 	},
